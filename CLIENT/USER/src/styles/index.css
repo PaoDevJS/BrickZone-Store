@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import "tailwindcss";
+
+body {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+@theme {
+  --color-Primary: #ca2128;
+  --color-Gray: #727586;
+  --color-Gray-Light: #dddddd;
+  --color-Light: #ebe4ff;
+}
+
+.FontCherry {
+  font-family: "Creepster", system-ui;
+}
+
+.isScroller::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #ededed;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.isScroller::-webkit-scrollbar-thumb {
+  height: 5px;
+  background: #aaa;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ededed;
+  border-radius: 10px;
+  overflow: auto;
+}
+body::-webkit-scrollbar-thumb {
+  height: 5px;
+  background: #8a8989;
+  border-radius: 10px;
+}
