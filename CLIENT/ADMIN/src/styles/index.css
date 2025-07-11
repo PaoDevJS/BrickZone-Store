@@ -29,3 +29,7 @@ body {
   border-radius: 10px;
   background: #838282;
 }
+
+.showdown {
+  box-shadow: 0px 0px 25px 5px rgb(173, 173, 173) ;
+}

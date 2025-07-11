@@ -15,6 +15,8 @@ const NewCreateProduct = () => {
     code: "",
     categories: "",
     supplier: "",
+    voucher: "",
+    outstand: ""
   });
   const [categories, setCategories] = useState([]);
   const [suppliers, setSuppliers] = useState([]);
@@ -25,11 +27,6 @@ const NewCreateProduct = () => {
     "http://localhost:3000/api/v1/supplier/get-all-suppliers";
   const linkApiNewCreateProduct =
     "http://localhost:3000/api/v1/product/create-product-new";
-
-  const formatMoney = new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency: "VND",
-  });
 
   useEffect(() => {
     const fetchApiGetAllCategoriesAndSupplier = async () => {
@@ -174,6 +171,37 @@ const NewCreateProduct = () => {
             placeholder="Nhập giá sản phẩm tại đây..."
             className="border border-gray-300 outline-none w-full mt-3 p-3 rounded-md placeholder:font-[600]"
           />
+        </div>
+        <div className="flex gap-15">
+          <div className="w-[50%]">
+            <label
+            htmlFor="voucher"
+            className="min-w-[25%] text-[16px] font-[600] text-gray-600"
+            >
+              Khuyến mại:
+            </label>
+            <input
+            type="number"
+            name="voucher"
+            id="voucher"
+            value={formData.voucher}
+            onChange={handleChangeFormData}
+            placeholder="Nhập khuyến mại sản phẩm tại đây..."
+            className="border border-gray-300 outline-none w-full mt-3 p-3 rounded-md placeholder:font-[600]"
+          />
+          </div>
+          <div className="w-[50%]">
+            <label
+            htmlFor="outstand"
+            className="min-w-[25%] text-[16px] font-[600] text-gray-600"
+            >
+              Nổi bật:
+            </label>
+            <div>
+              <h3></h3>
+              se
+            </div>
+          </div>
         </div>
         <div>
           <label

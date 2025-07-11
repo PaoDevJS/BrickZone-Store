@@ -8,15 +8,15 @@ const ListProductOfStore = ({ products, formData }) => {
   const [page, setPage] = useState(1);
 
   // Tìm kiếm theo danh mục
-  const isFilterCategories = (categories_id) => {
+  const isFilterCategories = (categories) => {
     const keySearch = formData.categories.toLowerCase();
-    return categories_id.toLowerCase().includes(keySearch);
+    return categories?.toLowerCase().includes(keySearch);
   };
   // Tìm kiếm theo tên sản phẩm
-  const isFilterNameProduct = (keyName) => {
+  const isFilterKeySearchProduct = (keyName, keyCategories) => {
     const keySearch = key ? JSON.parse(key).toLowerCase() : "";
-    console.log(key);
-    return keyName.toLowerCase().includes(keySearch);
+    console.log(keySearch)
+    return keyName?.toLowerCase().includes(keySearch) || keyCategories?.toLowerCase().includes(keySearch);
   };
   // Tìm kiếm theo bảng giá
   const isFilterPrice = (price) => {
@@ -35,6 +35,21 @@ const ListProductOfStore = ({ products, formData }) => {
         return price;
     }
   };
+  // Tìm kiếm theo bảng giá
+  const isFilterAge = (age) => {
+    switch (formData.age) {
+      case "A1":
+        return age >= 1 && age <= 3;
+      case "A2":
+        return age >= 3 && age <= 6;
+      case "A3":
+        return age >= 6 && age <= 12;
+      case "A4":
+        return age >= 12;
+      default:
+        return age;
+    }
+  };
 
   const handleBtnCircleChevronLeft = () => {
     if (page <= 1) return;
@@ -49,9 +64,9 @@ const ListProductOfStore = ({ products, formData }) => {
 
   const isFilterProducts = products?.filter(
     (item) =>
-      isFilterCategories(item.categories_id.name) &&
-      isFilterPrice(item.price) &&
-      isFilterNameProduct(item.name)
+      isFilterKeySearchProduct(item.name, item.categories_id.name) &&
+      (isFilterPrice(item.price) &&
+      isFilterCategories(item.categories_id.name))
   );
   return (
     <>

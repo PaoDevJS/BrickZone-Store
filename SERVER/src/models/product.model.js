@@ -40,6 +40,13 @@ const CreateTableProductSchema = new mongoose.Schema(
       enum: ["Ẩn", "Hiện", "Hết hàng"],
       default: "Hiện",
     },
+    voucher: {
+      type: Number
+    },
+    outstand: {
+      type: Boolean,
+      default: false
+    }
   },
   {
     timestamps: true,

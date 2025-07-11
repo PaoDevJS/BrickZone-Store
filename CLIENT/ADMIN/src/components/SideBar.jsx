@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { BiSolidDashboard } from "react-icons/bi";
 import { FaSquareParking, FaRegNewspaper, FaBlogger } from "react-icons/fa6";
 import { FaUsers, FaShoppingCart, FaListOl } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 const SideBar = () => {
   const user = JSON.parse(localStorage.getItem("userInfoAdmin"));
   const navigate = useNavigate();
+  const path = useLocation().pathname.split("/")[1]
   const handleSubmitLogout = () => {
     localStorage.removeItem("accessTokenAdmin");
     localStorage.removeItem("userInfoAdmin");
@@ -35,49 +36,49 @@ const SideBar = () => {
             <div className="py-4 px-7 flex flex-col gap-3">
               <Link
                 to={"/"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <BiSolidDashboard size={25} />
                 <h3 className="font-[700] text-[16px]">Tổng quan</h3>
               </Link>
               <Link
                 to={"/quan-ly-danh-muc/danh-sach-danh-muc"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-danh-muc" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaListOl size={25} />
                 <h3 className="font-[700] text-[16px]">Quản lý danh mục</h3>
               </Link>
               <Link
                 to={"/quan-ly-nha-cung-cap/danh-sach-nha-cung-cap"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-nha-cung-cap" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaBlogger size={25} />
                 <h3 className="font-[700] text-[16px]">Quản lý nhà cung cấp</h3>
               </Link>
               <Link
                 to={"/quan-ly-san-pham/danh-sach-san-pham"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-san-pham" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaSquareParking size={25} />
                 <h3 className="font-[700] text-[16px]">Quản lý sản phẩm</h3>
               </Link>
               <Link
                 to={"/quan-ly-khach-hang/danh-sach-khach-hang"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-khach-hang" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaUsers size={25} />
-                <h3 className="font-[700] text-[16px]">Quản lý khách hàng</h3>
+                <h3 className="font-[700] text-[16px]">Quản lý Người dùng</h3>
               </Link>
               <Link
                 to={"/quan-ly-don-hang"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-don-hang" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaShoppingCart size={25} />
                 <h3 className="font-[700] text-[16px]">Quản lý đơn hàng</h3>
               </Link>
               <Link
                 to={"/quan-ly-tin-tuc/danh-sach-tin-tuc"}
-                className="flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial"
+                className={`${path === "quan-ly-tin-tuc" ? "bg-RedDrank text-white" : ""} flex items-center gap-3 hover:bg-RedDrank hover:text-white py-3 px-4 rounded-md transition-all duration-300 ease-initial`}
               >
                 <FaRegNewspaper size={25} />
                 <h3 className="font-[700] text-[16px]">Quản lý bài viết</h3>

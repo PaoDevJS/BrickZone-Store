@@ -30,7 +30,7 @@ const Search = ({ show, setShow }) => {
 
   const isFilterProducts = products?.filter(
     (item) =>
-      item.categories_id.name.toLowerCase().includes(keySearch.toLowerCase()) &&
+      item.categories_id.name.toLowerCase().includes(keySearch.toLowerCase()) ||
       item.name.toLowerCase().includes(keySearch.toLowerCase())
   );
 
@@ -78,7 +78,7 @@ const Search = ({ show, setShow }) => {
                   }`}
                   onClick={() => setShow(false)}
                   key={item._id}
-                  className="border flex items-center gap-5"
+                  className="flex items-center gap-5"
                 >
                   <img
                     src={`http://localhost:3000/${item?.imgUrl[0]}`}

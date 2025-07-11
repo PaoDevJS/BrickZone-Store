@@ -180,7 +180,7 @@ export const updateItemAuth = async (req, res) => {
       return res.status(200).json({ message: "Người dùng không tồn tại." });
 
     // kiểm tra dữ liệu trống
-    if (!firstName || !lastName || !email || !password || !phone || !status)
+    if (!firstName || !lastName || !email || !password || !status)
       return res
         .status(400)
         .json({ message: "Vui lòng không để trống các trường thông tin." });
@@ -189,11 +189,6 @@ export const updateItemAuth = async (req, res) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email))
       return res.status(400).json({ message: "Email không hợp lệ!" });
-
-    // kiểm tra số điện thoại hợp lệ
-    const phoneRegex = /^(0[3|5|7|8|9])[0-9]{8}$/;
-    if (!phoneRegex.test(phone))
-      return res.status(400).json({ message: "Số điện thoại không hợp lệ!" });
 
     user.firstName = firstName || user.firstName;
     user.lastName = lastName || user.lastName;

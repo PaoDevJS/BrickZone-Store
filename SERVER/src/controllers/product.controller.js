@@ -13,6 +13,8 @@ export const newCreateProduct = async (req, res) => {
       categories_id,
       supplier_id,
       code_product,
+      voucher,
+      outstand
     } = req.body;
 
     const re = /[!@#$%^&*()?":{}|<>_\-+=~`[\]\\\/]/;
@@ -85,6 +87,8 @@ export const newCreateProduct = async (req, res) => {
       desc,
       price,
       imgUrl: arrayImgUrl,
+      voucher,
+      outstand
     });
 
     return res.status(200).json({ message: "Thêm sản phẩm mới thành công." });
@@ -110,6 +114,8 @@ export const updateItemProduct = async (req, res) => {
       code_product,
       status,
       imgUrls,
+      voucher, 
+      outstand
     } = req.body;
     // Kiểm tra sản phẩm có tồn tại
     const product = await productModel.findById(id);
@@ -143,6 +149,8 @@ export const updateItemProduct = async (req, res) => {
     product.categories_id = categories_id || product.categories_id;
     product.supplier_id = supplier_id || product.supplier_id;
     product.imgUrl = images || product.imgUrl;
+    product.outstand = outstand || product.outstand
+    product.voucher = voucher || product.voucher
 
     await product.save();
 

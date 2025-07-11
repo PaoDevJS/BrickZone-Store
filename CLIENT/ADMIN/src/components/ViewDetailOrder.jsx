@@ -76,7 +76,7 @@ const ViewDetailOrder = ({ orderId, setOrderId, setViewDetail }) => {
                 </div>
               </div>
               {/* bottom */}
-              <div className="w-full max-h-[500px] mt-5 overflow-y-scroll border border-gray-300 rounded p-3">
+              <div className="w-full max-h-[500px] mt-5 overflow-y-scroll Scroller border border-gray-300 rounded p-3">
                 <table className="table-fixed w-full rounded overflow-hidden">
                   <thead>
                     <tr className="bg-red-600 text-white">

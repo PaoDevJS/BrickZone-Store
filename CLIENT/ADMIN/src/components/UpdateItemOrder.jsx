@@ -52,7 +52,7 @@ const UpdateItemOrder = ({
   return (
     <div className={`fixed top-0 bottom-0 right-0 left-0 bg-black/20 z-50`}>
       <div className="flex items-center justify-center w-full h-full">
-        <div className="w-[90%] max-h-[90%] bg-white rounded-md border border-gray-200 p-10">
+        <div className="w-[80%] max-h-[90%] bg-white rounded-md border border-gray-200 p-10 overflow-y-scroll Scroller">
           <h1 className="text-center text-xl font-[700] uppercase mb-10">
             Cập nhật trạng thái đơn hàng
           </h1>
@@ -98,7 +98,7 @@ const UpdateItemOrder = ({
                 </div>
               </div>
               {/* bottom */}
-              <div className="w-full max-h-[550px] mt-5 overflow-y-scroll border border-gray-300 rounded p-3">
+              <div className="w-full max-h-[550px] mt-5 overflow-y-scroll Scroller border border-gray-300 rounded p-3">
                 <table className="table-fixed w-full rounded overflow-hidden">
                   <thead>
                     <tr className="bg-red-600 text-white">
@@ -196,9 +196,9 @@ const UpdateItemOrder = ({
                       <option value="Đang chuẩn bị hàng">
                         Đang chuẩn bị hàng
                       </option>
-                      <option value="Đang giao hàng">Đang vận chuyển</option>
+                      <option value="Đang vận chuyển">Đang vận chuyển</option>
                       <option value="Giao thành công">Giao thành công</option>
-                      <option value="Giao thành công">
+                      <option value="Giao không thành công">
                         Giao không thành công
                       </option>
                       <option value="Đã hủy">Đã hủy</option>

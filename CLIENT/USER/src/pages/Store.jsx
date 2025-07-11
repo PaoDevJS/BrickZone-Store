@@ -10,7 +10,8 @@ const Store = () => {
   const [formData, setFormData] = useState({
     categories: "",
     price: "",
-    supplier: ""
+    supplier: "",
+    age: ""
   });
 
   const linkUrlApiGetAllProducts =

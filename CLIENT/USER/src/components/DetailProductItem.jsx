@@ -33,7 +33,7 @@ const DetailProductItem = () => {
   }, [id]);
 
   return (
-    <div className="m-auto container my-10 2xl:px-0 px-10 flex flex-col gap-15">
+    <div className="m-auto container my-10 px-10 flex flex-col gap-15">
       <button
         onClick={() => navigate(-1)}
         className="flex cursor-pointer gap-1 text-gray-600 hover:text-black font-[500] transition-all duration-300 ease-linear"

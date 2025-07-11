@@ -11,7 +11,7 @@ const ListImageUrlProductItem = ({ images }) => {
           className="w-full h-full object-fill"
         />
       </div>
-      <div className="mt-5 border w-[90%] m-auto overflow-x-scroll isScroller relative flex items-center p-3 gap-3">
+      <div className="mt-5 w-[90%] m-auto overflow-x-scroll isScroller relative flex items-center p-3 gap-3">
         {images &&
           images.map((img, key) => (
             <img

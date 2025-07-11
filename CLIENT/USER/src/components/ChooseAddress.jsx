@@ -17,12 +17,13 @@ const ChooseAddress = ({ setInfoUser, infoUser }) => {
           },
         });
         setListAddress(result.data?.listAddress);
+        setInfoUser(result.data?.listAddress[0]._id)
       } catch (error) {
         console.log(error.response?.data?.message);
       }
     };
     isFetchApiData();
-  }, []);
+  }, [setInfoUser]);
   return (
     <div className="border rounded-md border-gray-200">
       <div className="border-b border-gray-300 px-10 py-5 flex items-center justify-between">

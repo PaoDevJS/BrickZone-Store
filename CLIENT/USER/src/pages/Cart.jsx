@@ -8,7 +8,6 @@ import cart from "../assets/images/cart.jpg";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
-  console.log(products)
   const linkUrlApiCallListCartOfUser =
     "http://localhost:3000/api/v1/cart/get-all-product-cart";
   const linkUrlApiUpdateProductItemToCart =

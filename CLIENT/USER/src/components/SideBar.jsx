@@ -5,6 +5,12 @@ const listPrice = [
   { code: "p4", price: "2.500.000 Đ - 5.000.000 Đ" },
   { code: "p5", price: "Trên 5.000.000 Đ" },
 ];
+const listAge = [
+  { code: 'A1', age: "1 - 3 tuổi"},
+  { code: 'A2', age: "3 - 6 tuổi"},
+  { code: 'A3', age: "6 - 12 tuổi"},
+  { code: 'A4', age: "12 tuổi trờ lên"},
+]
 
 const SideBar = ({ categories, setFormData, formData }) => {
   const handleOnChangeData = (valid) => {
@@ -16,6 +22,7 @@ const SideBar = ({ categories, setFormData, formData }) => {
       categories: "",
       price: "",
       supplier: "",
+      age: ""
     });
   };
   return (
@@ -64,6 +71,31 @@ const SideBar = ({ categories, setFormData, formData }) => {
                   className="font-[500] cursor-pointer"
                 >
                   {item.price}
+                </label>
+              </li>
+            ))}
+        </ul>
+      </div>
+      {/* Độ tuổi */}
+      <div>
+        <h1 className="text-[20px] font-[700] text-Primary uppercase">Độ tuổi</h1>
+        <ul className="w-full max-h-[200px] mt-3 flex flex-col gap-3">
+          {listAge &&
+            listAge.map((item) => (
+              <li key={item.code} className="flex items-center gap-2 px-3">
+                <input
+                  type="checkbox"
+                  id={item.code}
+                  name="age"
+                  value={item.code}
+                  onChange={handleOnChangeData}
+                  checked={formData.age !== item.code ? false : true}
+                />
+                <label
+                  htmlFor={item.code}
+                  className="font-[500] cursor-pointer"
+                >
+                  {item.age}
                 </label>
               </li>
             ))}

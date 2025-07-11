@@ -8,7 +8,7 @@ export const IsPaymentMoMo = async (res, totalAmount, order_id, cart_id) => {
   const accessKey = process.env.accessKey_momo;
   const secretKey = process.env.secretKey_momo;
   const partnerCode = "MOMO";
-  const redirectUrl = `http://localhost:5173`;
+  const redirectUrl = `http://localhost:5173/thanh-toan-thanh-cong/${order_id}`;
   const ipnUrl = `https://d93d-1-53-37-58.ngrok-free.app/api/v1/order/payment/check-type-payment/${cart_id}`;
   const requestType = "payWithMethod";
   var amount = totalAmount;
